@@ -1,16 +1,71 @@
-# React + Vite
+# Serverless Image Processor Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend for uploading an image, generating processed variants, storing them in AWS S3, and downloading outputs.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- Tailwind CSS
+- AWS SDK for JavaScript v3
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Create or update `.env` in the frontend folder:
+
+```env
+VITE_AWS_REGION=your-region
+VITE_S3_BUCKET=your-bucket-name
+VITE_AWS_ACCESS_KEY=your-access-key
+VITE_AWS_SECRET_KEY=your-secret-key
+```
+
+3. Start development server:
+
+```bash
+npm run dev
+```
+
+4. Build for production:
+
+```bash
+npm run build
+```
+
+## Image Placeholders
+
+Add your screenshots to `docs/images/` and update the file names if needed.
+
+### 1. Website UI
+
+![Website UI Placeholder](docs/images/website-ui-placeholder.png)
+
+### 2. Input Image (Before Processing)
+
+![Input Placeholder](docs/images/input-image-placeholder.png)
+
+### 3. Output Images (After Processing)
+
+![Output Placeholder](docs/images/output-images-placeholder.png)
+
+### 4. AWS S3 Bucket View
+
+![S3 Placeholder](docs/images/aws-s3-placeholder.png)
+
+## Suggested Screenshot Names
+
+- website-ui-placeholder.png
+- input-image-placeholder.png
+- output-images-placeholder.png
+- aws-s3-placeholder.png
+
+## Notes
+
+- Keep real AWS credentials out of public repositories.
+- If browser metadata requests are blocked, verify S3 CORS settings.
